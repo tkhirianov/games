@@ -1,65 +1,55 @@
-# license: GPLv3
-__author__ = "Александр Мангазеев"
-
 import turtle
 from math import sin
 
-print("""Данная программа умеет рисовать цифры, заданного десятичного числа
-   для этого необходимо ввести число с клавиатуры и нажать Enter
+def print_about_message():
+    print("""Данная программа умеет рисовать цифры, заданного десятичного числа
+       для этого необходимо ввести число с клавиатуры и нажать Enter
 
 
-   """)
+       """)
 
-num = input('Enter number: ')
-
-t = turtle.Turtle()
-t.shape("turtle")
-t.color("darkgreen", "yellow")
-t.shapesize(2)
-t.speed(10)
+def init_turtle():
+    t = turtle.Turtle()
+    t.shape("turtle")
+    t.color("darkgreen", "yellow")
+    t.shapesize(2)
+    t.speed(10)
+    t.penup()
+    t.backward(300)
 
 
 def main():
-    t.penup()
-    t.backward(300)
+    print_about_message()
+    num = input('Enter number: ')
   
-    number(num)
+    init_turtle()
+    draw_number(num)
     
     t.hideturtle()
     
-def number(num):
+def draw_number(num):
     for h in str(num):
         if h == '1':
             digit_one(50)
-            t.forward(30)
         elif h == '2':
             digit_two(50)
-            t.forward(30)
         elif h == '3':
             digit_three(50)
-            t.forward(30)
         elif h == '4':
             digit_four(50)
-            t.forward(30)
         elif h == '5':
             digit_five(50)
-            t.forward(30)
         elif h == '6':
             digit_six(50)
-            t.forward(30)
         elif h == '7':
             digit_seven(50)
-            t.forward(30)
         elif h == '8':
             digit_eight(50)
-            t.forward(30)
         elif h == '9':
             digit_nine(50)
-            t.forward(30)
         elif h == '0':
             digit_zero(50)
-            t.forward(30)
-        
+        t.forward(30)        
             
 def digit_one(length):
     """ Рисует цифру с высотой length
